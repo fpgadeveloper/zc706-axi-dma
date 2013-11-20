@@ -1,0 +1,37 @@
+##############################################################################
+## Filename:          E:\Github\fpgadeveloper\zc706-ddr3-sodimm\EDK1\pcores/axi_stream_generator_v1_00_a/data/axi_stream_generator_v2_1_0.mpd
+## Description:       Microprocessor Peripheral Description
+## Date:              Tue Nov 19 10:13:17 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+BEGIN axi_stream_generator
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION IMP_NETLIST = TRUE
+OPTION HDL = VHDL
+OPTION ARCH_SUPPORT_MAP = (OTHERS=DEVELOPMENT)
+## Bus Interfaces
+BUS_INTERFACE BUS=M_AXIS, BUS_STD=AXIS, BUS_TYPE=INITIATOR
+BUS_INTERFACE BUS=S_AXIS, BUS_STD=AXIS, BUS_TYPE=TARGET
+
+## Parameters
+PARAMETER C_S_AXIS_PROTOCOL = GENERIC, DT = string, TYPE = NON_HDL, ASSIGNMENT = CONSTANT, BUS = S_AXIS
+PARAMETER C_S_AXIS_TDATA_WIDTH = 32, DT = integer, TYPE = NON_HDL, ASSIGNMENT = CONSTANT, BUS = S_AXIS
+PARAMETER C_M_AXIS_PROTOCOL = GENERIC, DT = string, TYPE = NON_HDL, ASSIGNMENT = CONSTANT, BUS = M_AXIS
+PARAMETER C_M_AXIS_TDATA_WIDTH = 32, DT = integer, TYPE = NON_HDL, ASSIGNMENT = CONSTANT, BUS = M_AXIS
+## Peripheral ports
+PORT ACLK = "", DIR=I, SIGIS=CLK, BUS=M_AXIS:S_AXIS
+PORT ARESETN = ARESETN, DIR=I, BUS=M_AXIS:S_AXIS
+PORT S_AXIS_TREADY = TREADY, DIR=O, BUS=S_AXIS
+PORT S_AXIS_TDATA = TDATA, DIR=I, VEC=[31:0], BUS=S_AXIS
+PORT S_AXIS_TLAST = TLAST, DIR=I, BUS=S_AXIS
+PORT S_AXIS_TVALID = TVALID, DIR=I, BUS=S_AXIS
+PORT M_AXIS_TVALID = TVALID, DIR=O, BUS=M_AXIS
+PORT M_AXIS_TDATA = TDATA, DIR=O, VEC=[31:0], BUS=M_AXIS
+PORT M_AXIS_TLAST = TLAST, DIR=O, BUS=M_AXIS
+PORT M_AXIS_TREADY = TREADY, DIR=I, BUS=M_AXIS
+PORT IN1 = "", DIR = I, VEC = [3:0]
+PORT OUT1 = "", DIR = O, VEC = [3:0]
+
+END
