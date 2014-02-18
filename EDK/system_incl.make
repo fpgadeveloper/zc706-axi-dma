@@ -9,7 +9,7 @@
 
 SHELL = CMD
 
-XILINX_EDK_DIR = C:/Xilinx/14.5/ISE_DS/EDK
+XILINX_EDK_DIR = C:/Xilinx/14.7/ISE_DS/EDK
 
 SYSTEM = system
 

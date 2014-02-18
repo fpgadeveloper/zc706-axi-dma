@@ -7,6 +7,11 @@ Example project that uses the DMA on the ZC706 board
 
 To complete.
 
+### Requirements
+
+* ISE Design Suite 14.7
+* ZC706 Evaluation Board
+
 ### License
 
 Feel free to modify the project or use it as a base for your application.
