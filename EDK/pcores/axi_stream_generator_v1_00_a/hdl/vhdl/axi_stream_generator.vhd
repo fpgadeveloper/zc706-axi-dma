@@ -76,8 +76,6 @@ use ieee.numeric_std.all;
 entity axi_stream_generator is
 	port 
 	(
-	  IN1 : in std_logic_vector(3 downto 0);
-	  OUT1 : out std_logic_vector(3 downto 0);
 		-- DO NOT EDIT BELOW THIS LINE ---------------------
 		-- Bus protocol ports, do not add or delete. 
 		ACLK	: in	std_logic;
